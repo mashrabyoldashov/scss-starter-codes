@@ -1,0 +1,99 @@
+.header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.116);
+
+    &__container{
+        width: 100%;
+        max-width: 1100px;
+        padding: 20px 0px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo-link{
+        text-decoration: none;
+        flex-shrink: 0;
+    }
+
+
+
+    &__list{
+        margin: 0 -20px;
+        padding: 0;
+        list-style: none;
+        display: flex;
+    }
+
+    &__item{
+        margin: 0 20px;
+    }
+
+    &__link{
+        color: black;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    .fa-moon-o{
+        font-size: 30px;
+    }
+
+    .fa-globe{
+        font-size: 30px;
+    }
+
+    .hamburger-menu{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .header{
+        .hamburger-menu{
+            background-image: url(../img/hamburger-menu.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-size: 20px 20px;
+            width: 20px;
+            height: 20px;
+            border: none;
+            margin-left: auto;
+            background-color: #fff;
+            display: block;
+            z-index: 1000;
+        }
+
+        .header--open .hamburger-menu{
+            background-image: url(../img/x-photo.png);
+        }
+
+        
+        &__nav{
+            display: none;
+        }
+
+        .header--open &__nav{
+            padding-left: 48px;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 70%;
+            height: 100vh;
+            background-color: #ccc;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+        }
+      
+        .header--open &__list{
+            flex-direction: column;
+        }
+    }
+}
